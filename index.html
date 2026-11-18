@@ -82,7 +82,7 @@ function makeBalancedAnswerSet(questions){
  positions=shuffle(positions);
  lastAnswerDist=[0,0,0,0];
  return questions.map((q,i)=>{
-  const correct=q.o[q.a],wrong=q.o.filter((_,j)=>j!==q.a);
+  const correct=q.o[q.a];let wrong=q.o.filter((_,j)=>j!==q.a);
   wrong=shuffle(wrong);
   const target=positions[i],options=[...wrong];
   options.splice(target,0,correct);
